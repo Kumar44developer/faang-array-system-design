@@ -11,3 +11,11 @@ struct StockTracker {
           globalMin(LLONG_MAX), globalMax(LLONG_MIN) {
         ring.assign(max(1, K), 0);
     }
+
+
+    void update(long long price) {          
+        curPrice = price;
+        globalMin = min(globalMin, price);
+        globalMax = max(globalMax, price);
+
+
