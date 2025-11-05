@@ -41,6 +41,14 @@ struct StockTracker {
     }
 };
 
+int main() {
+    StockTracker st(3);
+    st.update(10); st.update(20); st.update(5); st.update(15);
+    cout << st.getCurrent() << " " << st.getMin() << " " << st.getMax()
+         << " " << fixed << setprecision(2) << st.getAvgK() << "\n";
+    return 0;
+}
+
 
 
 
