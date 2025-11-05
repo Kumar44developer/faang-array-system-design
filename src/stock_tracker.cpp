@@ -31,3 +31,22 @@ struct StockTracker {
             head = (head + 1) % K;
         }
     }
+
+ long long getCurrent() const { return curPrice; }                   
+    long long getMin() const { return count ? globalMin : LLONG_MAX; }  
+    long long getMax() const { return count ? globalMax : LLONG_MIN; }  
+    double getAvgK() const {                                            
+        if (K <= 0 || count == 0) return 0.0;
+        return double(ringSum) / double(min(count, K));
+    }
+};
+
+
+
+
+
+
+
+
+
+
