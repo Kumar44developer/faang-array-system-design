@@ -18,4 +18,16 @@ struct StockTracker {
         globalMin = min(globalMin, price);
         globalMax = max(globalMax, price);
 
-
+    if (K <= 0) return;
+        if (count < K) {
+            ringSum += price;
+            ring[head] = price;
+            head = (head + 1) % K;
+            ++count;
+        } else {
+            long long old = ring[head];
+            ringSum += price - old;
+            ring[head] = price;
+            head = (head + 1) % K;
+        }
+    }
