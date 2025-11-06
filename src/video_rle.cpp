@@ -16,4 +16,14 @@ static vector<vector<pair<int,int>>> encode(const vector<vector<int>>& frame) {
         for (const auto& row : frame) enc.push_back(encodeRow(row));
         return enc;
     }
-
+    static vector<vector<int>> decode(const vector<vector<pair<int,int>>>& enc, int cols) {
+        vector<vector<int>> frame; frame.reserve(enc.size());
+        for (const auto& row : enc) {
+            vector<int> out;
+            for (auto [val, cnt] : row) out.insert(out.end(), cnt, val);
+            if ((int)out.size() != cols) out.resize(cols, 0); 
+            frame.push_back(move(out));
+        }
+        return frame;
+    }
+};
