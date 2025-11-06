@@ -16,3 +16,10 @@ struct AutoComplete {
         return out;
     }
 };
+int main() {
+    AutoComplete ac({"apple","app","ape","bat","band","banner","ban"});
+    auto res = ac.suggest("ban", 4);
+    for (auto &s : res) cout << s << " ";
+    cout << "\n";
+    return 0;
+}
