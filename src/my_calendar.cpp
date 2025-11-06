@@ -10,6 +10,12 @@ struct MyCalendar {
             if (ivals[mid].first < s) lo = mid + 1;
             else hi = mid;
         }
+if (lo > 0 && ivals[lo-1].second > s) return false;
+        if (lo < n && ivals[lo].first < e) return false;
+        ivals.insert(ivals.begin() + lo, {s, e});
+        return true;
+    }
+};
  
 
 
