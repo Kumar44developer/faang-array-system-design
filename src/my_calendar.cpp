@@ -1,4 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
+struct MyCalendar {
+    vector<pair<int,int>> ivals; 
+    bool book(int s, int e) {
+        int n = (int)ivals.size();
+        int lo = 0, hi = n;
+        while (lo < hi) {
+            int mid = (lo + hi) / 2;
+            if (ivals[mid].first < s) lo = mid + 1;
+            else hi = mid;
+        }
+ 
 
 
