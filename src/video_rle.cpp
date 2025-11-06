@@ -11,4 +11,9 @@ struct RLEFrame {
         out.push_back({cur, cnt});
         return out;
     }
+static vector<vector<pair<int,int>>> encode(const vector<vector<int>>& frame) {
+        vector<vector<pair<int,int>>> enc; enc.reserve(frame.size());
+        for (const auto& row : frame) enc.push_back(encodeRow(row));
+        return enc;
+    }
 
