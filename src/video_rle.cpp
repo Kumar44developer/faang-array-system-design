@@ -27,3 +27,13 @@ static vector<vector<pair<int,int>>> encode(const vector<vector<int>>& frame) {
         return frame;
     }
 };
+int main() {
+    vector<vector<int>> frame = {{1,1,1,2,2},{3,3,4,4,4}};
+    auto enc = RLEFrame::encode(frame);
+    auto dec = RLEFrame::decode(enc, 5);
+    for (auto &row : dec) {
+        for (int v : row) cout << v << " ";
+        cout << "\n";
+    }
+    return 0;
+}
