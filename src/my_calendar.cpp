@@ -16,6 +16,10 @@ if (lo > 0 && ivals[lo-1].second > s) return false;
         return true;
     }
 };
- 
+
+int main() {
+    MyCalendar cal;
+    cout << boolalpha;
+    cout << cal.book(10,20) << "\n";  
 
 
