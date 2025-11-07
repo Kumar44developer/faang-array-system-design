@@ -22,6 +22,7 @@ int main() {
     cout << boolalpha;
     cout << cal.book(10,20) << "\n";  
     cout << cal.book(15,25) << "\n"; 
-    
+    cout << cal.book(20,30) << "\n"; 
+    return 0;
     
 
