@@ -21,5 +21,5 @@ int main() {
     auto res = ac.suggest("ban", 4);
     for (auto &s : res) cout << s << " ";
     cout << "\n";
-    return 0;
+    return 0;
 }

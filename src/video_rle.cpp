@@ -20,7 +20,7 @@ static vector<vector<pair<int,int>>> encode(const vector<vector<int>>& frame) {
         vector<vector<int>> frame; frame.reserve(enc.size());
         for (const auto& row : enc) {
             vector<int> out;
-            for (auto [val, cnt] : row) out.insert(out.end(), cnt, val);
+            for (const auto& p : row) out.insert(out.end(), p.second, p.first);
             if ((int)out.size() != cols) out.resize(cols, 0); 
             frame.push_back(move(out));
         }
@@ -35,5 +35,5 @@ int main() {
         for (int v : row) cout << v << " ";
         cout << "\n";
     }
-    return 0;
+    return 0;
 }

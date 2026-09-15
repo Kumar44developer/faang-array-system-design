@@ -13,8 +13,8 @@ struct MyCalendar {
 if (lo > 0 && ivals[lo-1].second > s) return false;
         if (lo < n && ivals[lo].first < e) return false;
         ivals.insert(ivals.begin() + lo, {s, e});
-        return true;
-    }
+        return true;
+    }
 };
 
 int main() {
@@ -23,6 +23,6 @@ int main() {
     cout << cal.book(10,20) << "\n";  
     cout << cal.book(15,25) << "\n"; 
     cout << cal.book(20,30) << "\n"; 
-    return 0;
+    return 0;
 }
 
